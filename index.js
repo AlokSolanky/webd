@@ -1,7 +1,7 @@
-const header = document.getElementById('main-header');
+const li = document.getElementsByClassName("list-group-item");
 
-header.style.borderBottom = '7px solid black';
-
-const tile = document.querySelector('.title');
-tile.style.fontWeight = 'bold';
-tile.style.color = 'yellow';
+for(let i = 0;i<li.length;i++)
+{
+    li[i].style.fontWeight = "bold";
+}
+li[2].style.backgroundColor = "green";
