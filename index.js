@@ -24,3 +24,29 @@ for(let i = 0;i<li_space.children.length;i++)
     li_space.children[i].appendChild(del_button);
 
 }
+
+const filter_btn = document.getElementById('filter');
+
+filter_btn.addEventListener('keyup',(e)=>{
+    let to_search = e.target.value.toLowerCase();
+    let lis = li_space.getElementsByTagName('li');
+
+    Array.from(lis).forEach((item)=>
+    {
+        // if(item.firstChild.toLowerCase().contains(to_search))
+        // {
+        //     item.style.display = "block";
+        // }
+        // else{
+        //     item.style.display = "none";
+        // }
+        if(item.firstChild.textContent.toLowerCase().includes(to_search))
+        {
+            item.style.display = "block";
+        }
+        else{
+            item.style.display = "none";
+        }
+
+    })
+})
