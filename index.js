@@ -1,14 +1,5 @@
-const li = document.getElementsByClassName("list-group-item");
+const li = document.querySelector('.list-group-item:nth-child(2)');
+li.style.backgroundColor = "green";
 
-const li1 = document.getElementsByTagName("li");
-
-for(let i = 0;i<li.length;i++)
-{
-    
-    li[i].style.backgroundColor = "green";
-}
-
-for(let i = 0;i<li1.length;i++)
-{
-    li1[i].style.color = "red";
-}
+const thirdLi = document.querySelector(".list-group-item:nth-child(3)");
+thirdLi.style.display = "none";
