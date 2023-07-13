@@ -1,13 +1,18 @@
-const secondli = document.querySelectorAll('.list-group-item:nth-child(2)');
-secondli[0].style.color = "green";
+const div = document.createElement('div');
+const text = document.createTextNode('Hello');
 
-// or
+const item = document.getElementById('items');
 
-// const secondli = document.querySelectorAll(".list-group-item");
-// secondli[1].style.color = "green";
+div.appendChild(text);
 
-const oddLi = document.querySelectorAll('.list-group-item:nth-child(odd)');
-for(let i = 0;i<oddLi.length;i++)
-{
-    oddLi[i].style.backgroundColor = "green";
-}
+const main = document.getElementById('main');
+
+main.insertBefore(div,item);
+
+
+const li0 = document.createElement("li");
+const text1 = document.createTextNode("Hello");
+li0.appendChild(text1);
+li0.className = "list-group-item";
+const li1 = document.querySelector('.list-group-item:first-child');
+item.insertBefore(li0,li1);
