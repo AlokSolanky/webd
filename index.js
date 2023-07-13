@@ -1,18 +1,26 @@
-const div = document.createElement('div');
-const text = document.createTextNode('Hello');
-
-const item = document.getElementById('items');
-
-div.appendChild(text);
-
-const main = document.getElementById('main');
-
-main.insertBefore(div,item);
 
 
-const li0 = document.createElement("li");
-const text1 = document.createTextNode("Hello");
-li0.appendChild(text1);
-li0.className = "list-group-item";
-const li1 = document.querySelector('.list-group-item:first-child');
-item.insertBefore(li0,li1);
+const li_space = document.querySelector(".list-group");
+
+li_space.addEventListener('click',(e)=>
+{
+    if(e.target.classList.contains('delete'))
+    {
+        li_space.removeChild(e.target.parentElement);
+    }
+})
+
+
+for(let i = 0;i<li_space.children.length;i++)
+{
+    let del_button = document.createElement('button');
+    del_button.setAttribute(
+      "class",
+      "btn btn-primary btn-sm float-right edit"
+    );
+    del_button.setAttribute('title','edit your task');
+
+    del_button.appendChild(document.createTextNode('+'))
+    li_space.children[i].appendChild(del_button);
+
+}
